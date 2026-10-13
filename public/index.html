@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>گپ دانشجویان کامپیوتر</title>
+    <script src="js/theme.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="join-page">
+    <button type="button" class="icon-btn theme-toggle floating" onclick="toggleTheme()" title="تغییر تم" aria-label="تغییر تم">
+      <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+    </button>
+
+    <div class="join-container">
+      <header class="join-header">
+        <div class="logo"><i class="fas fa-comments"></i></div>
+        <h1>CS Gap</h1>
+        <p>وارد یک اتاق شو و با بقیه گپ بزن</p>
+      </header>
+      <main class="join-main">
+        <form action="chat.html" id="join-form">
+          <div class="form-control">
+            <label for="username">نام کاربری</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="نام کاربری را وارد کنید..."
+                maxlength="20"
+                autocomplete="off"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-control">
+            <label for="room">اتاق</label>
+            <div class="input-wrap">
+              <i class="fas fa-hashtag"></i>
+              <select name="room" id="room">
+                <option value="ساختمان داده‌ها">ساختمان داده‌ها</option>
+                <option value="طراحی الگوریتم‌ها">طراحی الگوریتم‌ها</option>
+                <option value="سیستم های عامل">سیستم های عامل</option>
+                <option value="مدار های منطقی">مدار های منطقی</option>
+                <option value="معماری کامپیوتر">معماری کامپیوتر</option>
+                <option value="هوش مصنوعی">هوش مصنوعی</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn">ورود به چت <i class="fas fa-arrow-left"></i></button>
+        </form>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        var u = document.getElementById("username");
+        var r = document.getElementById("room");
+        try {
+          u.value = localStorage.getItem("chatyad-username") || "";
+          var lr = localStorage.getItem("chatyad-room");
+          if (lr && Array.prototype.some.call(r.options, function (o) { return o.value === lr; })) r.value = lr;
+        } catch (e) {}
+        document.getElementById("join-form").addEventListener("submit", function () {
+          try {
+            localStorage.setItem("chatyad-username", u.value.trim());
+            localStorage.setItem("chatyad-room", r.value);
+          } catch (e) {}
+        });
+      })();
+    </script>
+  </body>
+</html>
