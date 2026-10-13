@@ -2,6 +2,8 @@
 
 A small real-time chat room app built with **Node.js**, **Express** and **Socket.IO**. Pick a username, join a topic room, and chat live with everyone in it.
 
+---
+
 ### Project Screenshots
 
 ### Join page
