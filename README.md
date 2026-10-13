@@ -15,6 +15,8 @@ A small real-time chat room app built with **Node.js**, **Express** and **Socket
 ### Chat (dark)
 ![Chat dark theme](/screenshots/chat-dark.png)
 
+&nbsp;
+
 ## Features
 
 - Real-time messaging with separate rooms
