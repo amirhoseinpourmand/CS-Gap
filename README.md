@@ -1,7 +1,6 @@
 # CS Gap
 
-A small real-time chat room app built with **Node.js**, **Express** and **Socket.IO**. Pick a username, join a topic room, and chat live with everyone in it.
-
+A small real-time chat room app built with **Node.js**, **Express** and **Socket.IO**. Pick a username, join a topic room, and chat live with everyone in it.<br>
 
 ### Join page
 
@@ -88,6 +87,12 @@ Rooms are defined in two places, which must be kept in sync:
 - Users and messages are stored in memory only, so everything resets when the server restarts.
 - Icons and fonts are loaded from CDNs (Font Awesome and Google Fonts), so an internet connection is required.
 
+
 ## License
 
-ISC
+This project is licensed under the **ISC License**.
+
+
+## Author
+
+Amirhosein Pourmand
